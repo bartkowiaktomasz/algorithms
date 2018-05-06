@@ -9,7 +9,7 @@ class BinaryHeap{
 
     /* Given a heap tree except for node i, arrange the node i
     To insert - add to the end of the list and then maxHeapify
-    To delete - swap given node with the last one, delete and maxHeapify 
+    To delete - swap given node with the last one, delete and maxHeapify
     */
     void maxHeapify(int arr[], int i){
         int leftChildIndex = 2*i + 1;
@@ -29,7 +29,7 @@ class BinaryHeap{
     }
 
     void buildMaxHeap(int arr[]){
-        for(int i = (int)Math.floor(arr.length - 1); i >= 0; i--){
+        for(int i = (int)Math.floor(arr.length/2); i >= 0; i--){
             maxHeapify(arr, i);
         }
     }
@@ -45,7 +45,6 @@ class BinaryHeap{
     }
 
     public static void main(String args[]){
-        // Assume a[0] is blank
         // Parent of a[n] is floor(a[(n-1)/2])
         // Children of a[n] are a[2n+1] and a[2n+2]
 
