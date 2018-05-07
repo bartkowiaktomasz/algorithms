@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
 
-class MaxSubarray{
+class Subarray{
 
     static int maxSumPrefixSubarray(int arr[], int prefix){
         int sumMax = 0;

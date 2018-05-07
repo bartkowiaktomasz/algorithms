@@ -11,7 +11,7 @@ class BinaryHeap{
     To insert - add to the end of the list and then maxHeapify
     To delete - swap given node with the last one, delete and maxHeapify
     */
-    void maxHeapify(int arr[], int i){
+    void maxHeapify(int arr[], int iaa){
         int leftChildIndex = 2*i + 1;
         int rightChildIndex = 2*i + 2;
         int largestIndex = i;
