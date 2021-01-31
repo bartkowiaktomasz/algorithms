@@ -40,3 +40,25 @@ sufficient to return either `arr[k]` (if we want to find `k`th smallest) or `arr
 where we iteratively find pivots thus splitting input list into two sublists. In each
 iteration we decide whether to search in the right or left subarray depending on the 
 value of `k`.
+
+
+## Binary Search
+Search algorithm for finding an index of `elem` in a (sorted) input array `arr`.
+
+### Idea
+The idea is to use divide and conquer and, at each iteration, divide the input list in
+half and then search for `elem` in either left or right sublist.
+
+#### Duplicate elements
+Variations of binary search include `binary_search_leftmost` and `binary_search_rightmost`
+which return an index of leftmost (rightmost) `elem` if the input array contains duplicates.
+
+In such case it is important to carefully move pointers `low`/`high`. See docstring for
+the implementation of `binary_search_leftmost`:
+
+>- `low` is guaranteed to be to the left of `elem` or be the leftmost `elem`
+>- move `left` to the right (position `mid + 1`) only if `mid` is pointing to an element
+smaller than `elem`, thus keeping the invariant above
+> - `mid` will be a floor of (low, high) so `high` moves towards `low`
+>- if `low` == `high` then either `high` is the leftmost element or there is no
+`elem` in the array

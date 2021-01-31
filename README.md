@@ -11,3 +11,4 @@ which allows for rendering MathJax in the browser
 | -- | -- | -- |  -- | -- | -- |  -- |
 | Knuth-Morris-Pratt | String/Pattern search | $O(mn)$ | $O(mn)$ | $O(m + n)$ | `s` - length of string, `m` - length of pattern | Pattern `p` has repeated substrings
 | QuickSelect | Selection | $O(n^2)$ | $O(n)$ | $O(1)$ | `n` - number of elements in a list | Find `k`th smallest element/Find `k` smallest elements
+| Binary Search | Search | $O(logn)$ | $O(logn)$ | $O(1)$ | (see above) | Find an index of `elem` in a sorted array `arr`
