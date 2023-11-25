@@ -1,5 +1,5 @@
 """
-QuickSort is a recursive sorting algorithm.
+QuickSort is a recursive sorting algorithm
 
 Idea:
 - Relies on a "partition" procedure that selects an element called "pivot", places
