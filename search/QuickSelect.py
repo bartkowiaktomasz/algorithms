@@ -1,6 +1,6 @@
 import copy
 
-from Sorting.QuickSort import QuickSort
+from sorting.QuickSort import QuickSort
 
 
 class QuickSelect:

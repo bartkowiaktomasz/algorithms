@@ -18,11 +18,11 @@ class BinarySearch:
         low = 0
         high = len(arr) - 1
         while high > low:
-            mid = math.floor((high + low) / 2)
-            if arr[mid] >= elem:
-                high = mid
-            else:
+            mid = math.floor(low + (high - low) / 2)
+            if arr[mid] < elem:
                 low = mid + 1
+            else:
+                high = mid
         if arr and arr[high] == elem:
             return high
         return -1
@@ -42,7 +42,7 @@ class BinarySearch:
         low = 0
         high = len(arr) - 1
         while high > low:
-            mid = math.ceil((high + low) / 2)
+            mid = math.ceil(low + (high - low) / 2)
             if arr[mid] > elem:
                 high = mid - 1
             else:
@@ -59,7 +59,7 @@ class BinarySearch:
         low = 0
         high = len(arr) - 1
         while high >= low:
-            mid = (high + low) // 2
+            mid = math.floor(low + (high - low) / 2)
             if arr[mid] == elem:
                 return mid
             if arr[mid] > elem:
@@ -70,6 +70,16 @@ class BinarySearch:
 
 
 if __name__ == "__main__":
+    assert BinarySearch.binary_search([1, 2, 3, 4, 5], 5) == 4
+    assert BinarySearch.binary_search([1, 2, 3, 4, 5], 1) == 0
+    assert BinarySearch.binary_search([1, 2, 3, 4, 5], 2) == 1
+    assert BinarySearch.binary_search([1], 1) == 0
+    assert BinarySearch.binary_search([1], 2) == -1
+    assert BinarySearch.binary_search([1, 2], 2) == 1
+    assert BinarySearch.binary_search([1, 2], 3) == -1
+    assert BinarySearch.binary_search([1, 2, 2], 2) in [1, 2]
+    assert BinarySearch.binary_search([1, 1, 2, 3, 3, 3], 5) == -1
+    assert BinarySearch.binary_search([1, 1, 2, 3, 3, 3], 5) == -1
     assert BinarySearch.binary_search_leftmost([1, 1, 2, 3, 3, 3], 5) == -1
     assert BinarySearch.binary_search_leftmost([1, 1, 2, 3, 3, 3], 1) == 0
     assert BinarySearch.binary_search_leftmost([1, 1, 2, 3, 3, 3], 2) == 2
